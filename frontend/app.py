@@ -91,7 +91,8 @@ if st.button("Predecir Propina"):
    
     # Solicitud al backend
     response = requests.post(
-        "https://lugerlakes--nyc-taxi-tip-prediction-fastapi-app.modal.run", 
+    #    "https://lugerlakes--nyc-taxi-tip-prediction-fastapi-app.modal.run", 
+        'http://127.0.0.1:8000/predict',
         json=features, 
         params={"confidence": confidence}
     )
