@@ -31,8 +31,9 @@ class Item(BaseModel):
     DOLocationID: float
     RatecodeID: float
 
-@modal.asgi_app()
+
 @app.function(image=image)
+@modal.asgi_app()
 def fastapi_app():
     @web_app.get('/ping')
     async def ping():
