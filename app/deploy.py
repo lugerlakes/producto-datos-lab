@@ -11,7 +11,7 @@ app=modal.App('NYC-Taxi-Tip-Prediction')
 
 image=modal.Image.debian_slim().pip_install(
     'fastapi', 'pydantic', 'joblib', 'numpy', 'uvicorn', 'scikit-learn').copy_local_file(
-        '../model/random_forest.joblib', '/model/random_forest.joblib')
+        '/model/random_forest.joblib', '/model/random_forest.joblib')
     
 class Item(BaseModel):
     pickup_weekday: float
