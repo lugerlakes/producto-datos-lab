@@ -7,7 +7,7 @@ from app.predict import predict_taxi_trip
 
 web_app = FastAPI()
 
-app=modal.App('NYC Taxi Tip Prediction')
+app=modal.App('NYC-Taxi-Tip-Prediction')
 
 image=modal.Image.debian_slim().pip_install(
     'fastapi', 'pydantic', 'joblib', 'numpy', 'uvicorn', 'scikit-learn').copy_local_file(
@@ -43,5 +43,5 @@ def fastapi_app():
     return web_app
 
 if __name__ == '__main__':
-    app.deploy('NYC Taxi Tip Prediction')
+    app.deploy('NYC-Taxi-Tip-Prediction')
         
