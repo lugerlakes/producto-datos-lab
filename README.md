@@ -145,7 +145,5 @@ El código fuenta está organizado de la siguiente manera:
 - 'frontend/': Contiene la GUI desarrollada con Streamlit.
 - 'model/': Almacena el modelo de machine learning utilizado para las predicciones.
 
-Cada archivo y función está documentado para facilitar la comprensión y modificación.
-
 ## Licencia
 Este proyecto está licenciado bajo la Licencia MIT.
