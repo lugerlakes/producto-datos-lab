@@ -16,10 +16,23 @@ image = modal.Image.debian_slim().pip_install(
     model_path, '/model/random_forest.joblib'
 )
 
-stub = modal.Stub('NYC-Taxi-Tip-Prediction')
+app = modal.App('NYC-Taxi-Tip-Prediction')
 
-@stub.function(image=image)
+class Item(BaseModel):
+    pickup_weekday: float
+    pickup_hour: float
+    work_hours: float
+    pickup_minute: float
+    passenger_count: float
+    trip_distance: float
+    trip_time: float
+    trip_speed: float
+    PULocationID: float
+    DOLocationID: float
+    RatecodeID: float
+
 @modal.asgi_app()
+@app.function(image=image)
 def fastapi_app():
     @web_app.get('/ping')
     async def ping():
@@ -37,19 +50,5 @@ def fastapi_app():
     
     return web_app
 
-class Item(BaseModel):
-    pickup_weekday: float
-    pickup_hour: float
-    work_hours: float
-    pickup_minute: float
-    passenger_count: float
-    trip_distance: float
-    trip_time: float
-    trip_speed: float
-    PULocationID: float
-    DOLocationID: float
-    RatecodeID: float
-
 if __name__ == '__main__':
-    with stub.run():
-        fastapi_app()
+    app.deploy('NYC-Taxi-Tip-Prediction')
