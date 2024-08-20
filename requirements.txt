@@ -15,3 +15,4 @@ streamlit
 requests
 modal
 pydantic
+os

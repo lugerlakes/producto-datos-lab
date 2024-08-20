@@ -2,6 +2,7 @@ import modal
 from fastapi import FastAPI
 from pydantic import BaseModel
 import numpy as np
+import os
 
 from app.predict import predict_taxi_trip
 
@@ -9,9 +10,11 @@ web_app = FastAPI()
 
 app=modal.App('NYC-Taxi-Tip-Prediction')
 
+model_path=os.path.abspath('model/random_forest.joblib')
+
 image=modal.Image.debian_slim().pip_install(
     'fastapi', 'pydantic', 'joblib', 'numpy', 'uvicorn', 'scikit-learn').copy_local_file(
-        '/model/random_forest.joblib', '/model/random_forest.joblib')
+        model_path, '/model/random_forest.joblib')
     
 class Item(BaseModel):
     pickup_weekday: float
