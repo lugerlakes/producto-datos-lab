@@ -174,7 +174,7 @@ if st.button(button_text):
    
     # Request to the backend
     response = requests.post(
-        "https://lugerlakes--nyc-taxi-tip-prediction-fastapi-app.modal.run/predict", # Modal URL
+        "https://lugerlakes--nyc-taxi-tip-prediction-fastapi-app.modal.run    /predict", # Modal URL
         json=features, 
         params={"confidence": confidence}
     )
