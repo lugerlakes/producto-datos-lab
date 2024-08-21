@@ -150,7 +150,7 @@ La respuesta indicará si se espera una propina alta o baja. ![ejemplo respuesta
       ```
       Se desplegará una URL local (En mi caso https://192.168.1.149:8501) ![URL local](./assets/Screenshots/Screenshot_streamlit_localhost.png)
 - Ingresa los detalles del viaje en taxi.
-- Haz clic en "Predecir Propina" para recibir una predicción. ![Ejemplo de predicción](./assets/Screenshots/Screenshot_ejemplo_prediction_low_tip.png)
+- Haz clic en "Predecir Propina" para recibir una predicción.
 
 #### Serverless:
 - **Desde cualquier navegador**, ingresa a la URL [proporcionada por Streamlit.](https://nyc-taxi-tip-prediction.streamlit.app/)
